@@ -33,7 +33,7 @@ import javax.ws.rs.core.Application;
  *
  * @author Ivar Grimstad (ivar.grimstad@gmail.com)
  */
-@EnableSnoopClient(name = "swarm")
+@EnableSnoopClient(serviceName = "swarm")
 @ApplicationPath("api")
 public class ApplicationConfig extends Application {
 
