@@ -26,6 +26,7 @@ package eu.agilejava.snoop;
 import eu.agilejava.snoop.annotation.Snoop;
 import eu.agilejava.snoop.client.SnoopDiscoveryClient;
 import java.util.logging.Logger;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -35,6 +36,7 @@ import javax.ws.rs.core.Response;
  *
  * @author Ivar Grimstad (ivar.grimstad@gmail.com)
  */
+@RequestScoped
 @Path("helloworld")
 public class HelloWorldResource {
 
