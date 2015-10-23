@@ -28,6 +28,7 @@ import eu.agilejava.snoop.client.SnoopDiscoveryClient;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.mvc.Models;
 import javax.mvc.annotation.Controller;
 import javax.mvc.annotation.View;
 import javax.ws.rs.GET;
@@ -52,9 +53,11 @@ public class HelloWorldResource {
    @Snoop(applicationName = "world")
    private SnoopDiscoveryClient worldService;
 
-   @View("helloworld.jsp")
+   @Inject
+   private Models model;
+   
    @GET
-   public void greet() {
+   public String greet() {
 
       LOGGER.info(() -> "greeting " + helloService);
 
@@ -70,6 +73,8 @@ public class HelloWorldResource {
               .map(r -> r.readEntity(String.class))
               .orElse("");
 
+      model.put("greeting", helloResponse + " " + worldResponse);
 //      return Response.ok(helloResponse + " " + worldResponse).build();
+      return "helloworld.jsp";
    }
 }
