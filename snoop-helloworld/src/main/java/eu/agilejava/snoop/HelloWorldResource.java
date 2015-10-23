@@ -74,7 +74,7 @@ public class HelloWorldResource {
               .orElse("");
 
       model.put("greeting", helloResponse + " " + worldResponse);
-//      return Response.ok(helloResponse + " " + worldResponse).build();
+      
       return "helloworld.jsp";
    }
 }
