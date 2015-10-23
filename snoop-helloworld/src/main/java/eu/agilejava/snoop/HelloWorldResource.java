@@ -24,7 +24,7 @@
 package eu.agilejava.snoop;
 
 import eu.agilejava.snoop.annotation.Snoop;
-import eu.agilejava.snoop.client.SnoopDiscoveryClient;
+import eu.agilejava.snoop.client.SnoopServiceClient;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -47,11 +47,11 @@ public class HelloWorldResource {
 
    @Inject
    @Snoop(applicationName = "hello")
-   private SnoopDiscoveryClient helloService;
+   private SnoopServiceClient helloService;
 
    @Inject
    @Snoop(applicationName = "world")
-   private SnoopDiscoveryClient worldService;
+   private SnoopServiceClient worldService;
 
    @Inject
    private Models model;
