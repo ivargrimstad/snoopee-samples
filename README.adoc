@@ -27,3 +27,7 @@ Packaged as Wildfly Swarm JAR
  java -jar target/snoop-hello-swarm-1.0.0-SNAPSHOT-swarm.jar
 
 *snoop-helloworld*
+
+This application is built using JSR 371 (MVC 1.0). That means that it currently
+only runs latest versions of GlassFish or Payara. The current configuration
+has been tested on Payara 4.1.153. 
