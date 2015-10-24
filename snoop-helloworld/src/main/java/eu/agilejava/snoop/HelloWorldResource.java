@@ -46,11 +46,11 @@ public class HelloWorldResource {
    private static final Logger LOGGER = Logger.getLogger("eu.agilejava.snoop");
 
    @Inject
-   @Snoop(applicationName = "hello")
+   @Snoop(serviceName = "hello")
    private SnoopServiceClient helloService;
 
    @Inject
-   @Snoop(applicationName = "world")
+   @Snoop(serviceName = "world")
    private SnoopServiceClient worldService;
 
    @Inject
