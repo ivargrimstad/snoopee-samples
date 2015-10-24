@@ -65,7 +65,7 @@
                   <world.host>http://192.168.59.103</world.host>
                   <world.port>8092</world.port>
                   <world.serviceRoot>snoop-world-service/api</world.serviceRoot>
-                  <world.serviceHost>192.168.59.103:8081/snoop-service/</world.serviceHost>            
+                  <world.snoopService>192.168.59.103:8081/snoop-service/</world.snoopService>            
                </env>
                <entryPoint>["/opt/jboss/wildfly/bin/standalone.sh", "-c", "standalone-snoop.xml", "-b", "0.0.0.0"]</entryPoint>
             </configuration>
