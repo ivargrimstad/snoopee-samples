@@ -47,13 +47,13 @@
             <configuration>
                <serverId>docker-hub</serverId>
                <imageName>ivargrimstad/${project.artifactId}</imageName>
-               <baseImage>jboss/wildfly:9.0.1.Final</baseImage>
+               <baseImage>jboss/wildfly:8.2.1.Final</baseImage>
                <maintainer>Ivar Grimstad (ivar.grimstad@gmail.com)</maintainer>
                <resources>
                   <resource>
                      <targetPath>/opt/jboss/wildfly/standalone/configuration/</targetPath>
                      <directory>${basedir}/src/main/wildfly</directory>
-                     <include>standalone-snoop.xml</include>
+                     <include>standalone-snoop-8.xml</include>
                   </resource>
                   <resource>
                      <targetPath>/opt/jboss/wildfly/standalone/deployments/</targetPath>
@@ -67,7 +67,7 @@
                   <world.serviceRoot>snoop-world-service/api</world.serviceRoot>
                   <world.snoopService>192.168.59.103:8081/snoop-service/</world.snoopService>            
                </env>
-               <entryPoint>["/opt/jboss/wildfly/bin/standalone.sh", "-c", "standalone-snoop.xml", "-b", "0.0.0.0"]</entryPoint>
+               <entryPoint>["/opt/jboss/wildfly/bin/standalone.sh", "-c", "standalone-snoop-8.xml", "-b", "0.0.0.0"]</entryPoint>
             </configuration>
          </plugin>
       </plugins>
