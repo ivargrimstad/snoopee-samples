@@ -7,6 +7,10 @@
    <packaging>pom</packaging>
 
    <name>Snoop Samples</name>
+   
+   <properties>
+      <snoop.version>1.3.0</snoop.version>
+   </properties>
 
    <modules>
       <module>snoop-hello</module>

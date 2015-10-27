@@ -46,7 +46,7 @@
       <dependency>
          <groupId>eu.agilejava</groupId>
          <artifactId>snoop-client</artifactId>
-         <version>1.3.0-SNAPSHOT</version>
+         <version>${snoop.version}</version>
       </dependency>
      
    </dependencies>
