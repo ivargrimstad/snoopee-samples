@@ -30,7 +30,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.mvc.Models;
 import javax.mvc.annotation.Controller;
-import javax.mvc.annotation.View;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
@@ -41,7 +40,7 @@ import javax.ws.rs.Path;
 @RequestScoped
 @Controller
 @Path("helloworld")
-public class HelloWorldResource {
+public class HelloWorldController {
 
    private static final Logger LOGGER = Logger.getLogger("eu.agilejava.snoop");
 
