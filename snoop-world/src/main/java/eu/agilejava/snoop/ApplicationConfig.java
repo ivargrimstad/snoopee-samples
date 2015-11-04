@@ -40,6 +40,7 @@ public class ApplicationConfig extends Application {
    @Override
    public Set<Class<?>> getClasses() {
       Set<Class<?>> resources = new HashSet<>();
+      resources.add(RootResource.class);
       resources.add(WorldResource.class);
       return resources;
    }

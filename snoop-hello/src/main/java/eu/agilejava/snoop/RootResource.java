@@ -23,25 +23,19 @@
  */
 package eu.agilejava.snoop;
 
-import eu.agilejava.snoop.annotation.EnableSnoopClient;
-import java.util.HashSet;
-import java.util.Set;
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
 
 /**
  *
  * @author Ivar Grimstad (ivar.grimstad@gmail.com)
  */
-@EnableSnoopClient(serviceName = "swarm")
-@ApplicationPath("api")
-public class ApplicationConfig extends Application {
-
-   @Override
-   public Set<Class<?>> getClasses() {
-      Set<Class<?>> resources = new HashSet<>();
-      resources.add(RootResource.class);
-      resources.add(HelloResource.class);
-      return resources;
-   }
+@Path("/")
+public class RootResource {
+   
+   @GET
+   public Response info() {
+      return Response.ok("Welcome to the Hello Service!").build();
+   }  
 }
