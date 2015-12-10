@@ -6,7 +6,7 @@
    <version>1.0.0-SNAPSHOT</version>
    <packaging>pom</packaging>
 
-   <name>Snoop Samples</name>
+   <name>SnoopEE Samples</name>
    
    <properties>
       <snoop.version>1.3.2-SNAPSHOT</snoop.version>

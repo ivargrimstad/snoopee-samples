@@ -6,7 +6,7 @@
    <version>1.0.0-SNAPSHOT</version>
    <packaging>war</packaging>
 
-   <name>Snoop Hello World Example</name>
+   <name>SnoopEE Hello World Example</name>
 
    <parent>
       <groupId>eu.agilejava</groupId>
