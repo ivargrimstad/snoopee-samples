@@ -43,7 +43,7 @@
          <plugin>
             <groupId>com.spotify</groupId>
             <artifactId>docker-maven-plugin</artifactId>
-            <version>0.2.11</version>
+            <version>0.3.8</version>
             <configuration>
                <serverId>docker-hub</serverId>
                <imageName>ivargrimstad/${project.artifactId}</imageName>
@@ -62,10 +62,10 @@
                   </resource>
                </resources>   
                <env>
-                  <hello.host>http://192.168.59.103</hello.host>
+                  <hello.host>http://192.168.99.100</hello.host>
                   <hello.port>8091</hello.port>
                   <hello.serviceRoot>snoop-hello-service/api</hello.serviceRoot>
-                  <hello.snoopService>192.168.59.103:8081/snoop-service/</hello.snoopService>            
+                  <hello.snoopService>192.168.99.100:8081/snoop-service/</hello.snoopService>            
                </env>
                <entryPoint>["/opt/jboss/wildfly/bin/standalone.sh", "-c", "standalone-snoop.xml", "-b", "0.0.0.0"]</entryPoint>
             </configuration>

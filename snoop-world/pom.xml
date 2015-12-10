@@ -43,7 +43,7 @@
          <plugin>
             <groupId>com.spotify</groupId>
             <artifactId>docker-maven-plugin</artifactId>
-            <version>0.2.11</version>
+            <version>0.3.8</version>
             <configuration>
                <serverId>docker-hub</serverId>
                <imageName>ivargrimstad/${project.artifactId}</imageName>
