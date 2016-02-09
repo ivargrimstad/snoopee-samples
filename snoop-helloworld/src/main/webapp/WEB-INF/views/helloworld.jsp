@@ -9,7 +9,7 @@
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Snoop Hello World Sample</title>
+      <title>SnoopEE Hello World Sample</title>
    </head>
    <body>
       <h1>${greeting}</h1>
