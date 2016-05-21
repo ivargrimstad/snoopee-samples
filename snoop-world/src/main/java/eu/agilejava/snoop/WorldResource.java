@@ -36,6 +36,6 @@ public class WorldResource {
    
    @GET
    public Response greet() {
-      return Response.ok("world").build();
+      return Response.ok("World").build();
    }
 }
