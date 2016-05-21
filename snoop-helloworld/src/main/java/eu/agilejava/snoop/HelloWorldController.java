@@ -63,7 +63,7 @@ public class HelloWorldController {
       String helloResponse = helloService.simpleGet("hello")
               .filter(r -> r.getStatus() == 200)
               .map(r -> r.readEntity(String.class))
-              .orElse("goodbye");
+              .orElse("Goodbye");
 
       LOGGER.info(() -> "response " + helloResponse);
 
