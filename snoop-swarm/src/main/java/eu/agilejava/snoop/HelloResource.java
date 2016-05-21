@@ -36,6 +36,6 @@ public class HelloResource {
    
    @GET
    public Response greet() {
-      return Response.ok("bzzzz").build();
+      return Response.ok("CybercomDEV 2016").build();
    }
 }

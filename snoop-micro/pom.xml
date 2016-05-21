@@ -61,6 +61,12 @@
                                         <argument>--port</argument>
                                         <argument>8094</argument>
                                     </arguments>
+                                    <environmentVariables>
+                                        <micro.host>http://localhost</micro.host>
+                                        <micro.port>8094</micro.port>
+                                        <micro.serviceRoot>snoop-micro-service/api</micro.serviceRoot>
+                                        <micro.snoopService>192.168.99.100:8081/snoop-service/</micro.snoopService>
+                                    </environmentVariables>
                                 </configuration>
                             </execution>
                         </executions>

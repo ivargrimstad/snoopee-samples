@@ -1,8 +1,8 @@
 snoop:
    host: http://localhost
-   port: 8094
+   port: 8080
    serviceRoot: snoop-micro-service/api
    
-#   snoopService: localhost:8080/snoop-service/
-   snoopService: 192.168.99.100:8081/snoop-service/
+   snoopService: localhost:8080/snoop-service/
+#   snoopService: 192.168.99.100:8081/snoop-service/
   

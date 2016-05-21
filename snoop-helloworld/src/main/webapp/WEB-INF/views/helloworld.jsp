@@ -12,6 +12,7 @@
       <title>SnoopEE Hello World Sample</title>
    </head>
    <body>
-      <h1>${greeting}</h1>
+       
+      <h1>${mvc.encoders.html(greeting)}</h1>
    </body>
 </html>
