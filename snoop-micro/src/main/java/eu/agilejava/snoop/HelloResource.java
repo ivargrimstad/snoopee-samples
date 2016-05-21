@@ -36,6 +36,6 @@ public class HelloResource {
    
    @GET
    public Response greet() {
-      return Response.ok("in Łódź").build();
+      return Response.ok("from Payara Micro").build();
    }
 }
