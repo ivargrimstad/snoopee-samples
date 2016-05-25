@@ -36,6 +36,6 @@ public class WorldResource {
    
    @GET
    public Response greet() {
-      return Response.ok("World").build();
+      return Response.ok("..to jPrime 2016").build();
    }
 }
