@@ -36,6 +36,6 @@ public class WorldResource {
    
    @GET
    public Response greet() {
-      return Response.ok("..to jPrime 2016").build();
+      return Response.ok("..to A Cup of Java with Cybercom 2016").build();
    }
 }
