@@ -1,4 +1,0 @@
-snoop:
-#   snoopService: localhost:8080/snoop-service/
-   snoopService: 192.168.99.100:8081/snoop-service/
-  
