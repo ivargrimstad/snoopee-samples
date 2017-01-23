@@ -2,7 +2,7 @@
 
 SnoopEE is an experimental registration and discovery service for Java EE based microservices.
 
-. Start the SnoopEE Service
+. Start the SnoopEE Discovery Service
 
  docker run -it -p 8081:8080 ivargrimstad/snoopee-service
 
