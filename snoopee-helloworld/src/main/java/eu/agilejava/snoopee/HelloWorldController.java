@@ -57,9 +57,13 @@ public class HelloWorldController {
    private Models model;
    
    @Inject
-   @SnoopEEConfig(key = "jalla")
+   @SnoopEEConfig(key = "stuff", defaultValue = "something else")
    private String jalla;
    
+   @Inject
+   @SnoopEEConfig(key = "jalla")
+   private String stuff;
+
    @GET
    public String greet() {
 
@@ -68,7 +72,7 @@ public class HelloWorldController {
       String helloResponse = helloService.simpleGet("hello")
               .filter(r -> r.getStatus() == 200)
               .map(r -> r.readEntity(String.class))
-              .orElse(jalla);
+              .orElse(jalla + stuff);
 
       LOGGER.info(() -> "response " + helloResponse);
 
