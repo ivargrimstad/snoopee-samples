@@ -48,6 +48,12 @@
          <artifactId>snoopee-client</artifactId>
          <version>${snoopee.version}</version>
       </dependency>
+      
+       <dependency>
+           <groupId>eu.agilejava</groupId>
+           <artifactId>snoopee-config-client</artifactId>
+         <version>${snoopee.version}</version>
+       </dependency>
      
    </dependencies>
 </project>
