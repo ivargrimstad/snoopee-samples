@@ -25,6 +25,7 @@ package eu.agilejava.snoopee;
 
 import eu.agilejava.snoopee.annotation.SnoopEE;
 import eu.agilejava.snoopee.client.SnoopEEServiceClient;
+import eu.agilejava.snoopee.config.SnoopEEConfig;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -55,6 +56,10 @@ public class HelloWorldController {
    @Inject
    private Models model;
    
+   @Inject
+   @SnoopEEConfig(key = "jalla")
+   private String jalla;
+   
    @GET
    public String greet() {
 
@@ -63,7 +68,7 @@ public class HelloWorldController {
       String helloResponse = helloService.simpleGet("hello")
               .filter(r -> r.getStatus() == 200)
               .map(r -> r.readEntity(String.class))
-              .orElse("Goodbye");
+              .orElse(jalla);
 
       LOGGER.info(() -> "response " + helloResponse);
 
