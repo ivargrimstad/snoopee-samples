@@ -43,46 +43,46 @@ import javax.ws.rs.Path;
 @Path("helloworld")
 public class HelloWorldController {
 
-   private static final Logger LOGGER = Logger.getLogger("eu.agilejava.snoopee");
+    private static final Logger LOGGER = Logger.getLogger("eu.agilejava.snoopee");
 
-   @Inject
-   @SnoopEE(serviceName = "hello")
-   private SnoopEEServiceClient helloService;
+    @Inject
+    @SnoopEE(serviceName = "hello")
+    private SnoopEEServiceClient helloService;
 
-   @Inject
-   @SnoopEE(serviceName = "world")
-   private SnoopEEServiceClient worldService;
+    @Inject
+    @SnoopEE(serviceName = "world")
+    private SnoopEEServiceClient worldService;
 
-   @Inject
-   private Models model;
-   
-   @Inject
-   @SnoopEEConfig(key = "stuff", defaultValue = "something else")
-   private String stuff;
-   
-   @Inject
-   @SnoopEEConfig(key = "jalla")
-   private String jalla;
+    @Inject
+    private Models model;
 
-   @GET
-   public String greet() {
+    @Inject
+    @SnoopEEConfig(key = "message")
+    private String message;
 
-      LOGGER.info(() -> "greeting " + helloService);
+    @Inject
+    @SnoopEEConfig(key = "stuff", defaultValue = "on Snow")
+    private String stuff;
 
-      String helloResponse = helloService.simpleGet("hello")
-              .filter(r -> r.getStatus() == 200)
-              .map(r -> r.readEntity(String.class))
-              .orElse(jalla + stuff);
+    @GET
+    public String greet() {
 
-      LOGGER.info(() -> "response " + helloResponse);
+        LOGGER.info(() -> "greeting " + helloService);
 
-      String worldResponse = worldService.simpleGet("world")
-              .filter(r -> r.getStatus() == 200)
-              .map(r -> r.readEntity(String.class))
-              .orElse("");
+        String helloResponse = helloService.simpleGet("hello")
+                .filter(r -> r.getStatus() == 200)
+                .map(r -> r.readEntity(String.class))
+                .orElse("goodbye");
 
-      model.put("greeting", helloResponse + " " + worldResponse);
-      
-      return "helloworld.jsp";
-   }
+        LOGGER.info(() -> "response " + helloResponse);
+
+        String worldResponse = worldService.simpleGet("world")
+                .filter(r -> r.getStatus() == 200)
+                .map(r -> r.readEntity(String.class))
+                .orElse(message + " " + stuff);
+
+        model.put("greeting", helloResponse + " " + worldResponse);
+
+        return "helloworld.jsp";
+    }
 }
