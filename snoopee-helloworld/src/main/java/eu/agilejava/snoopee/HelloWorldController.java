@@ -58,11 +58,11 @@ public class HelloWorldController {
    
    @Inject
    @SnoopEEConfig(key = "stuff", defaultValue = "something else")
-   private String jalla;
+   private String stuff;
    
    @Inject
    @SnoopEEConfig(key = "jalla")
-   private String stuff;
+   private String jalla;
 
    @GET
    public String greet() {
