@@ -46,7 +46,7 @@
             <version>${docker.plugin.version}</version>
             <configuration>
                <serverId>docker-hub</serverId>
-               <imageName>ivargrimstad/${project.artifactId}:${project.version}</imageName>
+               <imageName>ivargrimstad/${project.artifactId}</imageName>
                <baseImage>jboss/wildfly:8.2.1.Final</baseImage>
                <maintainer>Ivar Grimstad (ivar.grimstad@gmail.com)</maintainer>
                <resources>
@@ -62,10 +62,10 @@
                   </resource>
                </resources>   
                <env>
-                  <world.host>http://192.168.99.100</world.host>
+                  <world.host>http://localhost</world.host>
                   <world.port>8092</world.port>
                   <world.serviceRoot>snoopee-world-service/api</world.serviceRoot>
-                  <world.snoopeeService>192.168.99.100:8081/snoopee-service/</world.snoopeeService>            
+                  <world.snoopeeService>130.190.101.232:8081/snoopee-service/</world.snoopeeService>            
                </env>
                <entryPoint>["/opt/jboss/wildfly/bin/standalone.sh", "-c", "standalone-snoopee-8.xml", "-b", "0.0.0.0"]</entryPoint>
             </configuration>
