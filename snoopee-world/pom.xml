@@ -1,75 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-   <modelVersion>4.0.0</modelVersion>
-   <groupId>eu.agilejava</groupId>
-   <artifactId>snoopee-world</artifactId>
-   <version>2.0.0-SNAPSHOT</version>
-   <packaging>war</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>eu.agilejava</groupId>
+    <artifactId>snoopee-world</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
-   <name>SnoopEE Samples World</name>
+    <name>SnoopEE Samples World</name>
 
-   <parent>
-      <groupId>eu.agilejava</groupId>
-      <artifactId>snoopee-samples</artifactId>
-      <version>2.0.0-SNAPSHOT</version>
-   </parent>
+    <parent>
+        <groupId>eu.agilejava</groupId>
+        <artifactId>snoopee-samples</artifactId>
+        <version>2.0.0-SNAPSHOT</version>
+    </parent>
 
-   <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <maven.compiler.source>1.8</maven.compiler.source>
-      <maven.compiler.target>1.8</maven.compiler.target>
-      <failOnMissingWebXml>false</failOnMissingWebXml>
-      <netbeans.hint.license>mit</netbeans.hint.license>
-   </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <netbeans.hint.license>mit</netbeans.hint.license>
+        <version.docker-maven-plugin>0.20.0</version.docker-maven-plugin>
+
+    </properties>
     
-   <dependencies>
-      <dependency>
-         <groupId>javax</groupId>
-         <artifactId>javaee-web-api</artifactId>
-         <version>7.0</version>
-         <scope>provided</scope>
-      </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
       
-      <dependency>
-         <groupId>eu.agilejava</groupId>
-         <artifactId>snoopee</artifactId>
-         <version>${snoopee.version}</version>
-      </dependency>
+        <dependency>
+            <groupId>eu.agilejava</groupId>
+            <artifactId>snoopee</artifactId>
+            <version>${snoopee.version}</version>
+        </dependency>
 
-   </dependencies>
+    </dependencies>
    
-   <build>
-      <plugins>
-         <plugin>
-            <groupId>com.spotify</groupId>
-            <artifactId>docker-maven-plugin</artifactId>
-            <version>${docker.plugin.version}</version>
-            <configuration>
-               <serverId>docker-hub</serverId>
-               <imageName>ivargrimstad/${project.artifactId}</imageName>
-               <baseImage>jboss/wildfly:8.2.1.Final</baseImage>
-               <maintainer>Ivar Grimstad (ivar.grimstad@gmail.com)</maintainer>
-               <resources>
-                  <resource>
-                     <targetPath>/opt/jboss/wildfly/standalone/configuration/</targetPath>
-                     <directory>${basedir}/src/main/wildfly</directory>
-                     <include>standalone-snoopee-8.xml</include>
-                  </resource>
-                  <resource>
-                     <targetPath>/opt/jboss/wildfly/standalone/deployments/</targetPath>
-                     <directory>${project.build.directory}</directory>
-                     <include>${project.build.finalName}.war</include>
-                  </resource>
-               </resources>   
-               <env>
-                  <world.host>http://localhost</world.host>
-                  <world.port>8092</world.port>
-                  <world.serviceRoot>snoopee-world-service/api</world.serviceRoot>
-                  <world.snoopeeService>130.190.101.232:8081/snoopee-service/</world.snoopeeService>            
-               </env>
-               <entryPoint>["/opt/jboss/wildfly/bin/standalone.sh", "-c", "standalone-snoopee-8.xml", "-b", "0.0.0.0"]</entryPoint>
-            </configuration>
-         </plugin>
-      </plugins>
-   </build>
+    <build>
+        <plugins>
+            <!--            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker.plugin.version}</version>
+                <configuration>
+                    <serverId>docker-hub</serverId>
+                    <imageName>ivargrimstad/${project.artifactId}</imageName>
+                    <baseImage>jboss/wildfly:8.2.1.Final</baseImage>
+                    <maintainer>Ivar Grimstad (ivar.grimstad@gmail.com)</maintainer>
+                    <resources>
+                        <resource>
+                            <targetPath>/opt/jboss/wildfly/standalone/configuration/</targetPath>
+                            <directory>${basedir}/src/main/wildfly</directory>
+                            <include>standalone-snoopee-8.xml</include>
+                        </resource>
+                        <resource>
+                            <targetPath>/opt/jboss/wildfly/standalone/deployments/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.war</include>
+                        </resource>
+                    </resources>   
+                    <env>
+                        <world.host>http://localhost</world.host>
+                        <world.port>8092</world.port>
+                        <world.serviceRoot>snoopee-world-service/api</world.serviceRoot>
+                        <world.snoopeeService>130.190.101.232:8081/snoopee-service/</world.snoopeeService>            
+                    </env>
+                    <entryPoint>["/opt/jboss/wildfly/bin/standalone.sh", "-c", "standalone-snoopee-8.xml", "-b", "0.0.0.0"]</entryPoint>
+                </configuration>
+            </plugin>-->
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${version.docker-maven-plugin}</version>
+
+                <configuration>
+                    <images>
+                        <image>
+                            <alias>wildfly</alias>
+                            <name>ivargrimstad/${project.artifactId}</name>
+                            <build>
+                                <maintainer>Ivar Grimstad (ivar.grimstad@gmail.com)</maintainer>
+                                <from>jboss/wildfly:9.0.1.Final</from>
+                                <assembly>
+                                    <user>jboss:jboss:jboss</user>
+                                    <basedir>/opt/jboss/wildfly/standalone</basedir>
+                                    <inline>
+                                        <files>
+                                            <file>
+                                                <source>${basedir}/target/${project.build.finalName}.war</source>
+                                                <outputDirectory>deployments</outputDirectory>
+                                            </file>
+                                            <file>
+                                                <source>${basedir}/src/main/wildfly/standalone-snoopee.xml</source>
+                                                <outputDirectory>configuration</outputDirectory>
+                                            </file>
+                                        </files>
+                                    </inline>                                   
+                                </assembly> 
+                                <entryPoint>
+                                    <exec>
+                                        <arg>/opt/jboss/wildfly/bin/standalone.sh</arg>
+                                        <arg>-c</arg>
+                                        <arg>standalone-snoopee.xml</arg>
+                                        <arg>-b</arg>
+                                        <arg>0.0.0.0</arg>
+                                    </exec>
+                                </entryPoint>                           
+                            </build>
+                            <run>
+                                <env>
+                                    <world.host>http://localhost</world.host>
+                                    <world.port>8092</world.port>
+                                    <world.serviceRoot>snoopee-world-service/api</world.serviceRoot>
+                                    <world.snoopeeService>192.168.1.21:8081/snoopee-service/</world.snoopeeService>            
+                                </env>
+                                <ports>
+                                    <port>8092:8080</port>
+                                </ports>
+                            </run>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>   
+        </plugins>
+    </build>
 </project>
