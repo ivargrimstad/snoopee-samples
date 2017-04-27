@@ -42,36 +42,6 @@
    
     <build>
         <plugins>
-            <!--            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>${docker.plugin.version}</version>
-                <configuration>
-                    <serverId>docker-hub</serverId>
-                    <imageName>ivargrimstad/${project.artifactId}</imageName>
-                    <baseImage>jboss/wildfly:8.2.1.Final</baseImage>
-                    <maintainer>Ivar Grimstad (ivar.grimstad@gmail.com)</maintainer>
-                    <resources>
-                        <resource>
-                            <targetPath>/opt/jboss/wildfly/standalone/configuration/</targetPath>
-                            <directory>${basedir}/src/main/wildfly</directory>
-                            <include>standalone-snoopee-8.xml</include>
-                        </resource>
-                        <resource>
-                            <targetPath>/opt/jboss/wildfly/standalone/deployments/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.war</include>
-                        </resource>
-                    </resources>   
-                    <env>
-                        <world.host>http://localhost</world.host>
-                        <world.port>8092</world.port>
-                        <world.serviceRoot>snoopee-world-service/api</world.serviceRoot>
-                        <world.snoopeeService>130.190.101.232:8081/snoopee-service/</world.snoopeeService>            
-                    </env>
-                    <entryPoint>["/opt/jboss/wildfly/bin/standalone.sh", "-c", "standalone-snoopee-8.xml", "-b", "0.0.0.0"]</entryPoint>
-                </configuration>
-            </plugin>-->
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
