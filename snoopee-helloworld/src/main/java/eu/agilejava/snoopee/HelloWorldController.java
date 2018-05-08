@@ -25,7 +25,6 @@ package eu.agilejava.snoopee;
 
 import eu.agilejava.snoopee.annotation.SnoopEE;
 import eu.agilejava.snoopee.client.SnoopEEServiceClient;
-import eu.agilejava.snoopee.config.SnoopEEConfig;
 import java.util.logging.Logger;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -46,7 +45,7 @@ public class HelloWorldController {
     private static final Logger LOGGER = Logger.getLogger("eu.agilejava.snoopee");
 
     @Inject
-    @SnoopEE(serviceName = "hello")
+    @SnoopEE(serviceName = "micro")
     private SnoopEEServiceClient helloService;
 
     @Inject
@@ -56,13 +55,13 @@ public class HelloWorldController {
     @Inject
     private Models model;
 
-    @Inject
-    @SnoopEEConfig(key = "message")
-    private String message;
-
-    @Inject
-    @SnoopEEConfig(key = "stuff", defaultValue = "on Snow")
-    private String stuff;
+//    @Inject
+//    @SnoopEEConfig(key = "message")
+//    private String message;
+//
+//    @Inject
+//    @SnoopEEConfig(key = "stuff", defaultValue = "on Snow")
+//    private String stuff;
 
     @GET
     public String greet() {
@@ -79,7 +78,7 @@ public class HelloWorldController {
         String worldResponse = worldService.simpleGet("world")
                 .filter(r -> r.getStatus() == 200)
                 .map(r -> r.readEntity(String.class))
-                .orElse(message + " " + stuff);
+                .orElse(" ");
 
         model.put("greeting", helloResponse + " " + worldResponse);
 
