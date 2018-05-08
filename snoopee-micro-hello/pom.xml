@@ -80,7 +80,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <hollow>false</hollow>
+                    <hollow>true</hollow>
                 </configuration>
             </plugin>
         </plugins>

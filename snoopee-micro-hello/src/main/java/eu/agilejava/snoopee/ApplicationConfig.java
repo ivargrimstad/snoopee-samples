@@ -34,7 +34,7 @@ import java.util.Set;
  * @author Ivar Grimstad (ivar.grimstad@gmail.com)
  */
 @EnableSnoopEEClient(serviceName = "micro")
-@ApplicationPath("api")
+@ApplicationPath("")
 public class ApplicationConfig extends Application {
 
     @Override
