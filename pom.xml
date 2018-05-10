@@ -17,7 +17,7 @@
         <module>snoopee-hello</module>  
         <module>snoopee-world</module>  
         <module>snoopee-swarm</module>  
-        <module>snoopee-micro</module>  
+        <module>snoopee-micro-hello</module>
         <module>snoopee-helloworld</module> 
     </modules>  
     
