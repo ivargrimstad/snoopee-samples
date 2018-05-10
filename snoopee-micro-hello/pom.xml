@@ -7,7 +7,7 @@
     <version>2.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>SnoopEE Samples Micro</name>
+    <name>SnoopEE Samples Micro Hello</name>
 
     <parent>
         <groupId>eu.agilejava</groupId>
