@@ -1,7 +1,0 @@
-snoopee:
-   host: http://localhost
-   port: 8091
-   serviceRoot: /
-   
-   snoopeeService: localhost:8081/snoopee-service/
-#   snoopeeService: 192.168.99.100:8081/snoopee-service/
